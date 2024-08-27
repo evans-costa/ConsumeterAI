@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "tsx watch src/http/server.ts",
     "build": "tsup src",
+    "lint:prettier:check": "prettier --check .",
+    "lint:prettier:fix": "prettier --write .",
+    "lint:eslint:check": "eslint",
     "prepare": "husky && git config --local core.editor cat",
     "cm": "cz"
   },
@@ -15,12 +18,18 @@
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@eslint/js": "^9.9.1",
     "@types/node": "^22.5.0",
     "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^9.9.1",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.9.0",
     "husky": "^9.1.5",
+    "prettier": "3.3.3",
     "tsup": "^8.2.4",
     "tsx": "^4.19.0",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.3.0"
   },
   "config": {
     "commitizen": {
