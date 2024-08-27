@@ -2,9 +2,11 @@
   "name": "shopper",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/http/server.ts",
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
     "build": "tsup src",
     "lint:prettier:check": "prettier --check .",
     "lint:prettier:fix": "prettier --write .",
@@ -15,6 +17,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@types/pg": "^8.11.6",
+    "dotenv": "^16.4.5",
+    "dotenv-expand": "^11.0.6",
+    "fastify": "^4.28.1",
+    "node-pg-migrate": "^7.6.1",
+    "pg": "^8.12.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
