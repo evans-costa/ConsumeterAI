@@ -9,8 +9,8 @@
     "lint:prettier:check": "prettier --check .",
     "lint:prettier:fix": "prettier --write .",
     "lint:eslint:check": "eslint",
-    "prepare": "husky && git config --local core.editor cat",
-    "cm": "cz"
+    "prepare": "husky",
+    "commit": "cz"
   },
   "keywords": [],
   "author": "",
