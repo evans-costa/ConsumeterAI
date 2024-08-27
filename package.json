@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "tsx watch src/http/server.ts",
     "build": "tsup src",
-    "prepare": "husky"
+    "prepare": "husky && git config --local core.editor cat",
+    "cm": "cz"
   },
   "keywords": [],
   "author": "",
@@ -15,9 +16,15 @@
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@types/node": "^22.5.0",
+    "cz-conventional-changelog": "^3.3.0",
     "husky": "^9.1.5",
     "tsup": "^8.2.4",
     "tsx": "^4.19.0",
     "typescript": "^5.5.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
