@@ -1,5 +1,4 @@
 import mime from "mime";
-import * as path from "node:path";
 import {
   GoogleAIFileManager,
   UploadFileResponse,
