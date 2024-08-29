@@ -11,17 +11,23 @@ async function seedDatabase() {
 
   await client.connect();
 
-  for (let i = 0; i < 3; i++) {
-    try {
-      const query = `INSERT INTO customers DEFAULT VALUES;`;
+  const findCustomersQuery = `SELECT * FROM customers;`;
+  const result = await client.query(findCustomersQuery);
 
-      await client.query(query);
-    } catch (error) {
-      if (error) throw error;
+  if (result.rowCount !== null && result.rowCount > 0) {
+    console.log("\n> Database already seeded!");
+  } else {
+    for (let i = 0; i < 3; i++) {
+      try {
+        const query = `INSERT INTO customers DEFAULT VALUES;`;
+
+        await client.query(query);
+      } catch (error) {
+        if (error) throw error;
+      }
     }
+    console.log("\n> Database seeded!");
   }
 
   await client.end();
-
-  console.log("\n> Database seeded!");
 }
