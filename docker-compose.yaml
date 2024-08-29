@@ -6,7 +6,6 @@ services:
       dockerfile: Dockerfile
     image: "nodejs:20-alpine"
     container_name: nodejs
-    env_file: .env.development
     environment:
       - NODE_ENV=$NODE_ENV
       - POSTGRES_HOST=postgres-db
@@ -14,14 +13,14 @@ services:
       - POSTGRES_USER=$POSTGRES_USER
       - POSTGRES_DB=$POSTGRES_DB
       - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      - DATABASE_URL=postgres://$POSTGRES_USER:$POSTGRES_PASSWORD@postgres-db:$POSTGRES_PORT/$POSTGRES_DB
     depends_on:
       postgres-db:
         condition: service_healthy
     ports:
       - "3000:3000"
     volumes:
-      - .:/usr/src/app
-      - node_modules:/usr/src/app/node_modules
+      - ./src:/usr/src/app/src
     networks:
       - app-network
 
@@ -51,4 +50,3 @@ networks:
 
 volumes:
   pgdata:
-  node_modules:
