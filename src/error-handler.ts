@@ -15,7 +15,7 @@ export const errorHandler: FastifyErrorHandler = (error, request, reply) => {
 
     return reply.status(400).send({
       error_code: "INVALID_DATA",
-      errors: error.flatten().fieldErrors,
+      error_description: error.flatten().fieldErrors,
     });
   }
 
