@@ -25,6 +25,8 @@
   "author": "Evandro Costa",
   "license": "ISC",
   "dependencies": {
+    "@fastify/swagger": "^8.15.0",
+    "@fastify/swagger-ui": "^4.1.0",
     "@google/generative-ai": "^0.17.1",
     "@types/pg": "^8.11.6",
     "dotenv": "^16.4.5",
