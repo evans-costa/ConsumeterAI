@@ -1,4 +1,3 @@
-import mime from "mime";
 import {
   GoogleAIFileManager,
   UploadFileResponse,
@@ -11,10 +10,8 @@ export async function uploadFile(
     process.env.GEMINI_API_KEY as string,
   );
 
-  const mimeType = mime.getType(filePath);
-
   const uploadResponse = await fileManager.uploadFile(filePath, {
-    mimeType: mimeType as string,
+    mimeType: "image/jpeg",
     displayName: "Medidor",
   });
 
