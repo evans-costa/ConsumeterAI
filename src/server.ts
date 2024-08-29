@@ -5,9 +5,7 @@ import {
   validatorCompiler,
 } from "fastify-type-provider-zod";
 
-import { upload } from "./routes/upload";
-import { confirm } from "./routes/confirm";
-import { list } from "./routes/list";
+import { measureRoutes } from "./routes/measureRoutes";
 import { errorHandler } from "./error-handler";
 
 const server = fastify();
@@ -15,9 +13,7 @@ const server = fastify();
 server.setValidatorCompiler(validatorCompiler);
 server.setSerializerCompiler(serializerCompiler);
 
-server.register(upload);
-server.register(confirm);
-server.register(list);
+server.register(measureRoutes);
 
 server.setErrorHandler(errorHandler);
 
