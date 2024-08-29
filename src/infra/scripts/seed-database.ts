@@ -17,15 +17,14 @@ async function seedDatabase() {
   if (result.rowCount !== null && result.rowCount > 0) {
     console.log("\n> Database already seeded!");
   } else {
-    for (let i = 0; i < 3; i++) {
-      try {
-        const query = `INSERT INTO customers DEFAULT VALUES;`;
+    try {
+      const query = `INSERT INTO customers (customer_code) VALUES ('33f02178-e1bd-466d-a9a6-fa3f56cacda1');`;
 
-        await client.query(query);
-      } catch (error) {
-        if (error) throw error;
-      }
+      await client.query(query);
+    } catch (error) {
+      if (error) throw error;
     }
+
     console.log("\n> Database seeded!");
   }
 
