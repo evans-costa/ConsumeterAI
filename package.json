@@ -1,7 +1,7 @@
 {
   "name": "shopper",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend para leitura de medidas usando Gemini AI",
   "main": "index.js",
   "scripts": {
     "dev": "npm run services:seed && tsx watch --env-file .env src/server.ts",
@@ -22,7 +22,7 @@
     "commit": "cz"
   },
   "keywords": [],
-  "author": "",
+  "author": "Evandro Costa",
   "license": "ISC",
   "dependencies": {
     "@google/generative-ai": "^0.17.1",
