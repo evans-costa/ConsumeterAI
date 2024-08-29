@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     image: "nodejs:20-alpine"
     container_name: nodejs
-    env_file: .env
+    env_file: .env.development
     environment:
       - NODE_ENV=$NODE_ENV
       - POSTGRES_HOST=postgres-db
