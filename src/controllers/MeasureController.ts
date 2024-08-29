@@ -90,7 +90,9 @@ export class MeasureController {
             }),
             400: z.object({
               error_code: z.string(),
-              error_description: z.record(z.string(), z.array(z.string())),
+              error_description: z
+                .record(z.string(), z.array(z.string()))
+                .or(z.string()),
             }),
             404: z.object({
               error_code: z.string(),
@@ -140,7 +142,7 @@ export class MeasureController {
             }),
             404: z.object({
               error_code: z.string(),
-              error_description: z.record(z.string(), z.array(z.string())),
+              error_description: z.string(),
             }),
             409: z.object({
               error_code: z.string(),
