@@ -11,6 +11,8 @@ export class MeasureController {
       "/upload",
       {
         schema: {
+          summary: "Cria uma leitura com base na imagem lida pela AI",
+          tags: ["measures"],
           body: z.object({
             image: z.string().min(1).base64(),
             customer_code: z.string().uuid(),
@@ -22,6 +24,14 @@ export class MeasureController {
               image_url: z.string(),
               measure_value: z.number().int(),
               measure_uuid: z.string().uuid(),
+            }),
+            400: z.object({
+              error_code: z.string(),
+              error_description: z.record(z.string(), z.array(z.string())),
+            }),
+            409: z.object({
+              error_code: z.string(),
+              error_description: z.string(),
             }),
           },
         },
@@ -53,6 +63,8 @@ export class MeasureController {
       "/:customer_code/list",
       {
         schema: {
+          summary: "Lista todas as leituras pelo código do consumidor",
+          tags: ["measures"],
           params: z.object({
             customer_code: z.string().uuid(),
           }),
@@ -75,6 +87,14 @@ export class MeasureController {
                   image_url: z.string().url(),
                 }),
               ),
+            }),
+            400: z.object({
+              error_code: z.string(),
+              error_description: z.record(z.string(), z.array(z.string())),
+            }),
+            404: z.object({
+              error_code: z.string(),
+              error_description: z.string(),
             }),
           },
         },
@@ -104,6 +124,8 @@ export class MeasureController {
       "/confirm",
       {
         schema: {
+          summary: "Confirma o valor de uma leitura",
+          tags: ["measures"],
           body: z.object({
             measure_uuid: z.string().uuid(),
             confirmed_value: z.number().int(),
@@ -111,6 +133,18 @@ export class MeasureController {
           response: {
             200: z.object({
               success: z.boolean(),
+            }),
+            400: z.object({
+              error_code: z.string(),
+              error_description: z.record(z.string(), z.array(z.string())),
+            }),
+            404: z.object({
+              error_code: z.string(),
+              error_description: z.record(z.string(), z.array(z.string())),
+            }),
+            409: z.object({
+              error_code: z.string(),
+              error_description: z.string(),
             }),
           },
         },
