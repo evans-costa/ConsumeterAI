@@ -3,7 +3,7 @@
    Leitor de Consumo AI
   <br>
 </h1>
-<h4 align="center">Um serviço que gerencia medição e leitura individualizada de consumo de água e gás, feito com <b>Typescript</b> e <b>Node.js</b>, usando o <b>Google Gemini AI</b>, como parte do desafio para a vaga de Desenvolvedor Full Stack da <a href="https://landing.shopper.com.br/" target="_blank">Shopper</a></h4>
+<h4 align="center">Um serviço que gerencia medição e leitura individualizada de consumo de água e gás, feito com <b>Typescript</b> e <b>Node.js</b>, usando o <b>Google Gemini AI</b></h4>
 
 <div align='center'>
 
@@ -22,6 +22,7 @@
   <a href="#recursos-principais">Recursos principais</a> •
   <a href="#como-usar">Como usar</a> •
   <a href="#melhorias">Melhorias</a> •
+  <a href="#creditos">Créditos</a> •
   <a href="#todo">TODO</a>
 </p>
 
@@ -111,6 +112,10 @@ Para rodar essa aplicação localmente, siga essas instruções:
 - Tratamento de erros;
 - Scripts de linting garantindo qualidade e estilização do código;
 - Migrações e seed do banco de dados.
+
+## Créditos
+
+Esse como parte do desafio para a vaga de Desenvolvedor Full Stack da <a href="https://landing.shopper.com.br/" target="_blank">Shopper</a>
 
 ## TODO
 
